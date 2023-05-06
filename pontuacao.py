@@ -13,6 +13,8 @@ class Pontuacao(Turtle):
         self.penup()
         self.goto(-220, 150)
         self.write(f"Score: {self.pontuacao}", align="center", font=("Arial", 20, "bold"))
+        self.goto(-220, 180)
+        self.write(f"Record: {self.maior_pontuacao}", align="center", font=("Arial", 20, "bold"))
 
     def aumentar_pontuacao(self):
         self.pontuacao += 1
@@ -20,10 +22,7 @@ class Pontuacao(Turtle):
         self.atualizar_maior_pontuacao()
         self.atualizar_pontuacao()
 
-
     def atualizar_maior_pontuacao(self):
-        self.goto(-220, 180)
-        self.write(f"Record: {self.maior_pontuacao}", align="center", font=("Arial", 20, "bold"))
         if self.pontuacao >= self.maior_pontuacao:
-            self.maior_pontuacao = self.pontuacao + 1
+            self.maior_pontuacao = self.pontuacao
             self.atualizar_pontuacao()
