@@ -29,6 +29,7 @@ while jogo_on == True:
     carro_config.aparecer_carro()
     if jogador.xcor() >= 180 or jogador.xcor() <= -180:
         turtle.write(f"Game over!", align="center", font=("Arial", 30, "bold"))
+        pontuacao.atualizar_maior_pontuacao()
         jogo_on = False
     for carro in carro_config.carros:
         if abs(jogador.xcor() - carro.xcor()) < 1 and jogador.distance(carro) < 65:
